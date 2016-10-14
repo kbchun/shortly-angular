@@ -31,7 +31,7 @@ h1 {
   float: left;
 }
 
-.navigation li a {
+.logout, .navigation li a {
   width: 100px;
   height: 20px;
   line-height: 20px;
@@ -115,7 +115,8 @@ input[type=url]:focus {
 
 
 .error {
-  border: red solid 4px;
+  background-color: #fee;
+  color: #a33;
   padding: 10px;
   margin: 0 10px;
 }
@@ -146,3 +147,11 @@ input[type=url]:focus {
   clear: both;
 }
 
+.shorten-form {
+  margin: 10px;
+  height: 80px;
+}
+
+.logout {
+  float: right;
+}
