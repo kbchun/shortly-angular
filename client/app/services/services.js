@@ -15,7 +15,6 @@ angular.module('shortly.services', [])
     }).then(function(data) {
       return data;
     }).catch(function(err) {
-      console.log("yea!!!! error");
       return err;
     });
   };

@@ -7,18 +7,19 @@ angular.module('shortly.links', [])
 
   $scope.liveSearch = '';
 
-  // $scope.$watch('liveSearch', function() {
-  //   $scope.filteredData = $scope.data.filter(function(item) { 
-  //     return item.indexOf($scope.liveSearch) !== -1;
-  //   });
-  // });
+  $scope.$watch('liveSearch', function() {
+    $scope.filteredData.links = $scope.data.links.filter(function(item) { 
+      return item.title.toLowerCase().includes($scope.liveSearch.toLowerCase());
+    });
+    console.log($scope.filteredData.links);
+  });
 
 
   Links.getAll()
     .then(function(res) {
       res.sort(function(a, b) { return b.visits - a.visits; });
       $scope.data.links = res;
-      $scope.filteredData = res;
+      $scope.filteredData.links = res;
     });
 
   $scope.signout = function() {
